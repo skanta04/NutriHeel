@@ -1,3 +1,4 @@
+
 .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -51,16 +52,24 @@ header a {
     border-radius: 10px;
 }
 
+.img-reservation form {
+    display: none;
+}
+
+#reserve-checkbox:checked + .img-reservation form {
+    display: block;
+}
+
 button {
     bottom: 20px;
     right: 20px;
-    background-color: #032030;
-    color: #E6EBF0;
+    background-color: #8EAFD1;
+    color: black;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 30px;
 }
 
 .about {
@@ -71,16 +80,42 @@ button {
 .about h2 {
     font-size: 40px;
 }
-
+.about p {
+    font-size: x-large;
+    padding-left: 30px;
+    padding-right: 30px;
+}
 
 .hours-of-op {
     grid-column: 2/3;
     grid-row: 4/5;
+    text-align: center;
+}
+
+.hours-of-op h2 {
+    font-size: 40px;
+}
+
+.hours-of-op p {
+    font-size: x-large;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .contact-info {
     grid-column: 1/2;
     grid-row: 4/5;
+    text-align: center;
+}
+
+.contact-info h2{
+    font-size: 40px;
+}
+
+.contact-info p {
+    font-size: x-large;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 footer {
@@ -88,6 +123,50 @@ footer {
     grid-row: 5/6;
     text-align: center;
     background-color: #E6EBF0;
-    font-size: 20px;
-    height: 60px; /* Adjust the height as needed */
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 150px 100px auto auto auto auto 60px;
+    }
+
+    header {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .res-name {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .img-reservation {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .about {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    .contact-info {
+        grid-column: 1/2;
+        grid-row:5/6;
+    }
+
+    .hours-of-op {
+        grid-column: 1/2;
+        grid-row: 6/7;
+    }
+
+    footer {
+        grid-column: 1/2;
+        grid-row: 7/8;
+    }
+
 }
