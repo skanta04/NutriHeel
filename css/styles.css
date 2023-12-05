@@ -19,16 +19,16 @@ header a {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 30px;
-  }
+}
 
-  .logo {
+.logo {
     display: inline-block;
     vertical-align: top;
     width: 200px;
     height: 150px;
     margin-right: 20px;
     margin-bottom: 20px;
-  }
+}
 
 
 .hero-text{
