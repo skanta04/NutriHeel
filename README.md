@@ -1,2 +1,2 @@
 # NutriHeel
-An app that helps UNC students find mental health resources on campus
+An website that helps UNC students find mental health resources and healthy restaurants on campus
