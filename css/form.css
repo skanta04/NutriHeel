@@ -3,13 +3,18 @@
 body {
     font-family: 'Barlow Condensed', sans-serif;
 }
+
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 150px auto 60px;
+    grid-template-rows: auto auto 60px;
     gap: 10px;
     margin: -10px;
+}
 
+a {
+    color: #E6EBF0;
+    text-decoration: none;
 }
 
 header {
@@ -17,29 +22,119 @@ header {
     grid-row: 1/2;
     background-color: #032030;
     overflow: hidden;
+    margin: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-header a {
-    float: right;
-    color: #E6EBF0;
-    text-align: center;
-    padding: 14px 16px;
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+header li a {
+    display: block;
+    padding: 20px 20px;
     text-decoration: none;
-    font-size: 30px;
-  }
+    font-size: 27px;
+}
 
-  .logo {
+header li a:hover,
+header .menu-btn:hover {
+    background-color: #E6EBF0;
+    color:#032030;
+}
+
+header .leaf {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+header .logo {
+    width: 35%;
+    height: auto;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+
+}
+
+header .menu-icon {
+    cursor: pointer;
     display: inline-block;
-    vertical-align: top;
-    width: 200px;
-    height: 150px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+}
 
+header .menu-icon .navicon {
+    background: #E6EBF0;
+    display: block;
+    height: 3px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 30px;
+}
+
+header .menu-icon .navicon:before,
+header .menu-icon .navicon:after {
+    background: #E6EBF0;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+header .menu-icon .navicon:before {
+    top: 10px;
+}
+
+header .menu-icon .navicon:after {
+    top: -10px;
+}
+
+/* menu btn */
+header .menu-btn {
+    display: none;
+}
+
+header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
 
 .form {
-
     grid-column: 1/2;
     grid-row: 2/3;
     background-color: #8EAFD1;
@@ -47,14 +142,13 @@ header a {
     padding: 25px;
     border: black 1px solid;
     border-radius: 10px;
-    
 }
 
 .form input:focus {
     border-color: #032030;
     outline: none;
-    -webkit-box-shadow: inset 0 3px 3px rgba(0,0,0,.075), 0 0 15px #032030;
-  box-shadow: inset 0 3px 3px rgba(0,0,0,.075), 0 0 15px #032030;
+    -webkit-box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.075), 0 0 15px #032030;
+    box-shadow: inset 0 3px 3px rgba(0, 0, 0, 0.075), 0 0 15px #032030;
 }
 
 legend {
@@ -71,15 +165,17 @@ input {
     font-size: medium;
 }
 
-
-#name, #email, #restaurant, #time, #number {
+#name,
+#email,
+#restaurant,
+#time,
+#number {
     width: 100%;
     height: 40px;
     margin-bottom: 10px;
     border: 2px solid #E6EBF0;
     border-radius: 10px;
 }
-
 
 #submit {
     background-color: #E6EBF0;
@@ -90,7 +186,7 @@ input {
     font-size: medium;
 }
 
-  footer {
+footer {
     grid-column: 1/2;
     grid-row: 3/4;
     text-align: center;
@@ -98,4 +194,68 @@ input {
     font-size: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin: -10px;
+}
+
+/* Mobile First Styles */
+@media screen and (min-width: 800px) {
+    header li {
+        float: left;
+    }
+
+    header li a {
+        padding: 20px 30px;
+    }
+
+    header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+   
+    }
+
+    header .menu-icon {
+        display: none;
+    }
+    form {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(5, auto);
+        gap: 10px;
+        row-gap: 20px;
+    }
+
+    legend {
+        grid-column: 1/3;
+        grid-row: 1/2;
+    }
+
+    form .restaurant {
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    .form #time {
+        grid-column: 2/3;
+    }
+    .form #number {
+        grid-column: 1/2;
+    }
+    .form #name,
+    .form #email {
+        grid-column: 1/2;
+    }
+
+    .form #time,
+    .form #number {
+        grid-column: 1/2;
+    }
+
+    form .sub {
+        grid-column: 1/3;
+    }
+
+    footer {
+        grid-row: 6/7;
+    }
 }
