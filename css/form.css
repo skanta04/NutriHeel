@@ -8,7 +8,8 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 150px auto 60px;
     gap: 10px;
-    
+    margin: -10px;
+
 }
 
 header {
