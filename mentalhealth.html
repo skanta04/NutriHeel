@@ -10,18 +10,16 @@
 <body>
     <div class="container">
         <header>
-            <div class="logo-container">
-                <a href="index.html"><img class="logo" src="images/leaf.png" alt="leaf"></a>
-            </div>
-            <input class="menu-btn" type="checkbox" id="menu-btn" />
-            <label class="menu-icon" for="menu-btn">
-            </label>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="restaurant.html">Restaurants</a>
-                <a href="mentalhealth.html">Mental Health</a>
-            </nav>
-        </header>
+            <a href="index.html"><img class="logo" src="images/leaf.png" alt="leaf"></a>
+        
+        <input class="menu-btn" type="checkbox" id="menu-btn" aria-label="Menu Button" />
+        <label class="menu-icon" for="menu-btn" aria-label="Toggle Menu"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="restaurant.html">Restaurants</a></li>
+            <li><a href="mentalhealth.html">Mental Health</a></li>
+        </ul>            
+    </header>
         <div class="mentalhealthhero">
             <img src="images/mentalhealthnutriheelhome.jpeg" alt="Hero image for mental health">
         </div>
@@ -36,25 +34,43 @@
             <p class = "listofstrat">Engage in regular physical exercise. Exercise is known to release endorphins, which can improve mood and reduce stress.</p>
             <h2 class="mentalhealthhub" >Mental Health Resource Hub</h2>
         </div> 
-        <div class = "img1-container">
-            <a href = "activeminds.html">
-            <img class="picsofmentalhealhhub" src="images/activeminds.png" alt="Active Minds logo">
-        </a>
-        <a href = "asianmhc.html">
-            <img class="picsofmentalhealhhub" src="images/asianmentalhealth.jpeg" alt="Asian Mental Health Collective logo">
-        </a>
-        <a href = "uncambass.html">
-            <img class="picsofmentalhealhhub"src="images/uncmehaaaa.png" alt="UNC Mental Health Ambassador logo">
-        </a>
-        <a href = "saath.html">
-            <img class="picsofmentalhealhhub" src="images/saath.png" alt="Saath logo">
-        </a>
-        <a href = "caps.html">
-            <img class="picsofmentalhealhhub" src="images/caps.jpeg" alt="CAPS logo">
-        </a>
-        <a href = "naic.html">
-            <img class="picsofmentalhealhhub" src="images/namiunc.jpeg" alt="NAMI UNC logo">
-        </a>
+        <div class="img1-container">
+            <div class="image-hover">
+                <a href="activeminds.html">
+                    <img class="picsofmentalhealhhub" src="images/activeminds.png" alt="Active Minds logo">
+                    <span class="hover-text">Active Minds</span>
+                </a>
+            </div>
+            <div class="image-hover">
+                    <a href="asianmhc.html">
+                        <img class="picsofmentalhealhhub" src="images/asianmentalhealth.jpeg" alt="Asian Mental Health Collective logo">
+                        <span class="hover-text">Asian Mental Health Collective</span>
+                    </a>
+            </div>
+            <div class="image-hover">
+                <a href="uncambass.html">
+                    <img class="picsofmentalhealhhub" src="images/uncmehaaaa.png" alt="UNC Mental Health Ambassador logo">
+                    <span class="hover-text">UNC Mental Health Ambassador</span>
+                </a>
+            </div>
+            <div class="image-hover">
+                <a href="saath.html">
+                    <img class="picsofmentalhealhhub" src="images/saath.png" alt="SAATH">
+                    <span class="hover-text">SAATH</span>
+                </a>
+            </div>
+            <div class="image-hover">
+                <a href="caps.html">
+                    <img class="picsofmentalhealhhub" src="images/caps.jpeg" alt="CAPS">
+                    <span class="hover-text">CAPS</span>
+                </a>
+            </div>
+            <div class="image-hover">
+                <a href="naic.html">
+                    <img class="picsofmentalhealhhub" src="images/namiwalks.jpeg" alt="NAMI">
+                    <span class="hover-text">NAMI</span>
+                </a>
+            </div>
         </div> 
         <footer class = "footer">
             <h2>NUTRIHEEL | made with lo</h2>

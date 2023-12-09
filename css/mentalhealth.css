@@ -85,11 +85,37 @@ header a {
     font-size: 18px;
 }
 
+.image-hover {
+    position: relative;
+    display: inline-block; /* Or adjust as per your layout */
+}
+
 .mentalhealthhero img, .picsofmentalhealhhub {
     width: 100%;
+    display: block;
     height: auto;
     object-fit: cover;
-    margin: 0; /* Adjust margin for mobile view */
+    margin: 0; 
+    border-radius: 10px;
+}
+
+.image-hover .hover-text {
+    position: absolute;
+    bottom: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+    color: white;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    text-align: center;
+    padding: 5px;
+}
+
+.image-hover:hover .hover-text {
+    visibility: visible;
+    opacity: 1;
 }
 
 .img1-container {
