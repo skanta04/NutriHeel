@@ -1,20 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Cedarville+Cursive&family=Fuzzy+Bubbles&display=swap');
 
 body {
     font-family: 'Barlow Condensed', sans-serif;
-    margin: 0;
-}
-
-a {
-    color: #E6EBF0;
-    text-decoration: none;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-rows: auto auto 60px;
     gap: 10px;
+    margin: -10px;
+}
+
+a {
+    color: #E6EBF0;
+    text-decoration: none;
 }
 
 header {
@@ -45,7 +45,7 @@ header li a {
 header li a:hover,
 header .menu-btn:hover {
     background-color: #E6EBF0;
-    color: #032030;
+    color:#032030;
 }
 
 header .leaf {
@@ -69,6 +69,7 @@ header .menu {
     clear: both;
     max-height: 0;
     transition: max-height .2s ease-out;
+
 }
 
 header .menu-icon {
@@ -136,8 +137,9 @@ header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
 .form-container {
     border: 2px solid #032030;
     background-color: #8EAFD1; 
-    padding: 20px;
+    padding: 40px;
     margin: auto; 
+    margin-top: 50px; 
     width: 80%; 
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
@@ -180,8 +182,33 @@ button:hover {
     background-color: #45a049;
 }
 
-/* Media query for screens less than or equal to 800px */
+footer {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    text-align: center;
+    background-color: #E6EBF0;
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 @media (min-width: 800px) {
+    header li {
+        float: left;
+    }
+    
+    header li a {
+        padding: 20px 30px;
+    }
+    header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+    header .menu-icon {
+        display: none;
+    }
+
     input[type="text"],
     input[type="tel"],
     input[type="email"],
@@ -193,4 +220,11 @@ button:hover {
     label {
         font-size: smaller;
     }
+
+    footer {
+        font-size: 20px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
 }
